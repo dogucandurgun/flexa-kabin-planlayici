@@ -42,7 +42,7 @@ function render(){
  const stepIndex=STEPS.indexOf(category);$('[data-out=step-label]').textContent=stepIndex>=0?`Adım ${stepIndex+1} / ${STEPS.length}`:'';$('.fb-step-nav').hidden=stepIndex<0;$('[data-step=prev]').hidden=stepIndex<=0;$('[data-out=next-step]').textContent=stepIndex>=STEPS.length-1?'Parçaları gözden geçir':`Sonraki: ${categoryNames[STEPS[stepIndex+1]]||''}`;
  $$('[data-category]').forEach(b=>b.classList.toggle('fb-done',stepDone(b.dataset.category)));
  $('[data-out=pick-name]').textContent={all:'Tümü',module:'Modüller',wall:'Duvarlar',door:'Kapılar',ad:'Reklam bantları',box:'İç mekân',stairs:'Merdivenler'}[pickFilter];
- $$('[data-sidebar]').forEach(b=>{b.classList.toggle('fb-active',b.dataset.sidebar===sidebar);b.setAttribute('aria-pressed',String(b.dataset.sidebar===sidebar));});$('.fb-start-guide').hidden=project.items.some(o=>o.kind==='module');$('[data-out=edit-count]').textContent=selected?'●':'';
+ $$('[data-sidebar]').forEach(b=>{b.classList.toggle('fb-active',b.dataset.sidebar===sidebar);b.setAttribute('aria-pressed',String(b.dataset.sidebar===sidebar));});$('.fb-start-guide').hidden=project.items.some(o=>o.kind==='module');
 const s=summary(project.items);for(const [key,value] of Object.entries({count:s.count,area:fmt(s.area),floors:s.floors,connections:fmt(s.shared)}))$(`[data-out=${key}]`).textContent=value;
  const item=project.items.find(x=>x.id===selected);if(!item)selected=null;renderObjectList();
  $$('[data-pick]').forEach(b=>{const active=b.dataset.pick===pickFilter;b.classList.toggle('fb-active',active);b.setAttribute('aria-pressed',String(active));});
