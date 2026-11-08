@@ -25,9 +25,7 @@
 #flexa-building-studio .fb-link-button{font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:3px;padding:4px 0}
 
 /* Header */
-.fb-header{display:flex;align-items:center;gap:8px;padding:0 12px 0 8px;border-bottom:1px solid var(--line);background:var(--white);z-index:5}
-.fb-site-back{display:grid;place-items:center;width:40px;height:40px;border-radius:var(--pill);color:var(--ink)}
-.fb-site-back:hover{background:var(--soft)}
+.fb-header{display:flex;align-items:center;gap:8px;padding:0 12px 0 20px;border-bottom:1px solid var(--line);background:var(--white);z-index:5}
 .fb-identity{display:flex;align-items:baseline;gap:10px;flex:1;min-width:0}
 .fb-identity strong{font-size:18px;font-weight:700;letter-spacing:-.4px}
 .fb-identity span{font-size:14px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -64,12 +62,9 @@
 #flexa-building-studio .fb-pick-filters button.fb-active{font-weight:600;background:var(--soft)}
 
 .fb-view-tools{position:absolute;left:16px;bottom:20px;z-index:10;display:flex;gap:8px}
-#flexa-building-studio .fb-measure-toggle{height:46px;padding:0 18px 0 14px}
-@media(max-width:700px){.fb-view-tools{left:12px;bottom:12px}#flexa-building-studio .fb-measure-toggle{width:46px;padding:0;justify-content:center}#flexa-building-studio .fb-measure-toggle span{display:none}}
-#flexa-building-studio .fb-measure-toggle{display:flex;align-items:center;gap:8px;background:var(--white);color:var(--ink);border-radius:var(--pill);padding:8px 16px 8px 12px;font-size:13px;font-weight:600;box-shadow:var(--shadow);transition:background .15s,color .15s}
-#flexa-building-studio .fb-measure-toggle:hover{background:var(--soft)}
-#flexa-building-studio .fb-measure-toggle.fb-active{background:var(--ink);color:var(--white)}
-#flexa-building-studio .fb-measure-toggle svg{width:18px;height:18px}
+
+@media(max-width:700px){.fb-view-tools{left:12px;bottom:12px}}
+
 .fb-start-guide{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(380px,calc(100% - 32px));background:var(--white);border-radius:16px;box-shadow:var(--shadow);padding:32px;text-align:center;z-index:8}
 .fb-start-guide h1{font-size:24px;font-weight:700;letter-spacing:-.6px;line-height:1.2}
 #flexa-building-studio .fb-start-guide p{color:var(--muted);margin:10px 0 22px}
@@ -89,17 +84,9 @@
 .fb-tool-switch svg{width:18px!important;height:18px!important}
 .fb-history{display:flex;align-items:center;gap:2px;height:46px;padding:0 3px;background:var(--white);border-radius:var(--pill);box-shadow:var(--shadow)}
 .fb-history .fb-icon-button svg{width:19px;height:19px}
-#flexa-building-studio .fb-tape-toggle.fb-active{background:#1a5fd6;color:var(--white)}
-#flexa-building-studio .fb-tape-toggle svg{width:20px;height:20px}
-@media(max-width:1180px){#flexa-building-studio .fb-view-tools .fb-measure-toggle{width:46px;padding:0;justify-content:center}#flexa-building-studio .fb-view-tools .fb-measure-toggle span{display:none}}
+
 /* Ölçüler + Mezura: one white pill, like the undo/redo group */
-.fb-measure-group{display:flex;align-items:center;gap:2px;height:46px;padding:3px;background:var(--white);border-radius:var(--pill);box-shadow:var(--shadow)}
-#flexa-building-studio .fb-measure-group .fb-measure-toggle{height:40px;width:auto;padding:0 14px 0 11px;gap:7px;box-shadow:none;background:transparent;color:var(--ink);font-weight:600;justify-content:center}
-#flexa-building-studio .fb-measure-group .fb-measure-toggle:hover{background:var(--soft)}
-#flexa-building-studio .fb-measure-group .fb-measure-toggle.fb-active{background:var(--ink);color:var(--white)}
-#flexa-building-studio .fb-measure-group .fb-tape-toggle.fb-active{background:#1a5fd6}
-#flexa-building-studio .fb-measure-group svg{width:20px;height:20px}
-@media(max-width:1180px){#flexa-building-studio .fb-measure-group .fb-measure-toggle{width:40px;padding:0}#flexa-building-studio .fb-measure-group .fb-measure-toggle span{display:none}}
+
 .fb-bottom-tools{left:300px;right:16px;transform:none;display:flex;justify-content:center;pointer-events:none}
 .fb-tool-switch{pointer-events:auto}
 @media(max-width:1180px){.fb-bottom-tools{left:200px}#flexa-building-studio .fb-tool-switch button span{display:none}#flexa-building-studio .fb-tool-switch button{padding:10px 12px}}
@@ -115,7 +102,6 @@
 #flexa-building-studio .fb-tape-bar button:hover{background:rgba(255,255,255,.32)}
 @media(max-width:700px){.fb-tape-bar{top:60px;right:12px}}
 .fb-tool-divider{width:1px;align-self:stretch;margin:6px 4px;background:var(--line)}
-.fb-gesture{position:absolute;right:16px;bottom:28px;font-size:11px;color:var(--faint);pointer-events:none;max-width:260px;text-align:right}
 
 .fb-context-menu{position:absolute;z-index:30;width:190px;background:var(--white);border-radius:var(--radius);padding:6px;box-shadow:var(--shadow)}
 .fb-context-menu>span{display:block;font-size:12px;color:var(--muted);padding:8px 10px}
@@ -139,16 +125,16 @@
 /* Steps */
 .fb-steps{list-style:none;margin:18px 0 0;padding:0}
 .fb-steps li{border-bottom:1px solid var(--line)}
-#flexa-building-studio .fb-steps button,#flexa-building-studio .fb-objects-link{display:flex;align-items:center;gap:14px;width:100%;padding:16px 0;text-align:left;border-radius:0}
+#flexa-building-studio .fb-steps button,#flexa-building-studio .fb-objects-link{display:flex;align-items:center;gap:16px;width:100%;min-height:72px;padding:14px 0;text-align:left;border-radius:0}
 #flexa-building-studio .fb-steps button:hover strong,#flexa-building-studio .fb-objects-link:hover strong{text-decoration:underline;text-underline-offset:3px}
 .fb-steps button>span,.fb-objects-link>span{flex:1;min-width:0}
 .fb-steps strong,.fb-objects-link strong{display:block;font-size:15px;font-weight:600}
-.fb-steps small,.fb-objects-link small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+#flexa-building-studio .fb-step-icon{width:24px;height:24px;flex-shrink:0;fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#flexa-building-studio .fb-step-chevron{width:20px;height:20px;flex-shrink:0;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fb-step-count{font-size:13px;font-weight:500;color:var(--muted);margin-right:-6px}
+.fb-objects-link{border-bottom:1px solid var(--line)!important}
 .fb-objects-link small b{font-weight:400}
-.fb-step-number{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);font-style:normal;font-size:13px;font-weight:600;flex-shrink:0}
-.fb-done .fb-step-number{background:var(--ink);border-color:var(--ink);color:var(--white);font-size:0}
-.fb-done .fb-step-number::before{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
-#flexa-building-studio .fb-objects-link{margin-top:20px;padding:16px;background:var(--soft);border-radius:var(--radius)}
+#flexa-building-studio .fb-objects-link{margin-top:0;background:none}
 
 .fb-category-back{display:inline-flex!important;align-items:center;gap:4px;font-size:13px;font-weight:600;margin:-4px 0 16px -6px!important;padding:4px 8px 4px 2px!important}
 .fb-category-back svg{width:18px!important;height:18px!important}
@@ -160,7 +146,7 @@
 #flexa-building-studio .fb-piece:active{cursor:grabbing}
 .fb-piece-art{display:grid;place-items:center;width:100%;aspect-ratio:4/3;background:var(--soft);border-radius:var(--radius);margin-bottom:10px;transition:background .15s,box-shadow .15s;color:var(--ink-2)}
 #flexa-building-studio .fb-piece-art svg{width:78%;height:auto;stroke-width:1.4}
-.fb-piece-art .fb-fill{fill:var(--accent);stroke:none}
+
 #flexa-building-studio .fb-piece:hover .fb-piece-art{background:#ececec}
 #flexa-building-studio .fb-piece:focus-visible{outline:none}
 #flexa-building-studio .fb-piece:focus-visible .fb-piece-art{box-shadow:0 0 0 2px var(--focus)}
@@ -176,7 +162,7 @@
 .fb-swatch-glass{background:linear-gradient(125deg,#dbe4df,#f7fbf9 45%,#bccfc7)}
 .fb-swatch-frosted{background:linear-gradient(45deg,#dde1dc,#f2f2eb)}
 .fb-swatch-solid{background:#777b72}
-.fb-swatch-wood{background:repeating-linear-gradient(93deg,#c4a57a 0,#cfb48b 3px,#bea175 5px,#d5ba92 9px)}
+
 .fb-swatch-vinyl{background:#bdb2a0}
 .fb-swatch-lightbox{background:#fff;box-shadow:inset 0 0 18px #ecdcb5,inset 0 0 0 1px rgba(0,0,0,.06)}
 .fb-swatch-none{background:repeating-linear-gradient(45deg,#e4e4e4 0,#e4e4e4 1px,#fafafa 1px,#fafafa 9px)}
@@ -196,12 +182,10 @@
 .fb-property-heading{margin-bottom:16px}
 .fb-property-heading span{display:block;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.6px}
 .fb-property-heading strong{display:block;font-size:22px;font-weight:700;letter-spacing:-.5px;margin-top:2px}
-.fb-selection-actions,.fb-module-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
-#flexa-building-studio .fb-selection-actions button,#flexa-building-studio .fb-module-actions button{border:1px solid var(--line);border-radius:var(--pill);padding:10px 12px;font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-#flexa-building-studio .fb-selection-actions button:hover:not(:disabled),#flexa-building-studio .fb-module-actions button:hover{border-color:var(--ink)}
-.fb-module-actions{margin:4px 0 0}
-.fb-floor-line{font-size:13px;color:var(--muted);margin:-4px 0 14px!important}
-.fb-floor-line output{color:var(--ink);font-weight:600}
+.fb-selection-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+#flexa-building-studio .fb-selection-actions button{border:1px solid var(--line);border-radius:var(--pill);padding:10px 12px;font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#flexa-building-studio .fb-selection-actions button:hover:not(:disabled){border-color:var(--ink)}
+
 .fb-transform-fields{padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:20px}
 
 .fb-field{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:500;color:var(--muted);margin-bottom:14px;min-width:0}
@@ -229,9 +213,6 @@
 .fb-switch input:checked{background:var(--ink)}
 .fb-switch input:checked::after{transform:translateX(16px)}
 
-.fb-file{display:block;font-size:12px;font-weight:500;color:var(--muted);margin:8px 0}
-.fb-file input{display:block;margin-top:6px;font-size:13px;color:var(--ink)}
-
 #flexa-building-studio .fb-delete{margin-top:auto;padding:12px;border-radius:var(--pill);color:var(--danger);font-weight:600;font-size:14px;width:100%;border:1px solid transparent}
 #flexa-building-studio .fb-delete:hover:not(:disabled){background:var(--danger-soft)}
 
@@ -242,7 +223,7 @@
 #flexa-building-studio .fb-save{padding:13px 22px;white-space:nowrap}
 
 /* Responsive */
-@media(max-width:1180px){.fb-gesture{display:none}}
+
 @media(max-width:900px){.fb-main{grid-template-columns:minmax(0,1fr) 320px}}
 @media(max-width:700px){
  #flexa-building-studio{height:auto;min-height:100dvh;overflow:visible;grid-template-rows:56px auto}
@@ -376,7 +357,7 @@
 .fb-row-icon{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;background:var(--soft);color:var(--ink);transition:background .15s,color .15s}
 #flexa-building-studio .fb-row-icon svg{width:21px;height:21px}
 .fb-view-row.fb-active .fb-row-icon{background:var(--ink);color:var(--white)}
-.fb-view-row.fb-tape-row.fb-active .fb-row-icon,.fb-view-row[data-tool=tape].fb-active .fb-row-icon{background:#1a5fd6}
+.fb-view-row[data-tool=tape].fb-active .fb-row-icon{background:#1a5fd6}
 .fb-row-text strong{display:block;font-size:14px;font-weight:600;color:var(--ink)}
 .fb-row-text small{display:block;font-size:12px;line-height:1.35;color:var(--muted);margin-top:2px}
 .fb-view-row kbd{font:600 11px/1 InterTight,system-ui,sans-serif;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:4px 6px;background:var(--white)}
