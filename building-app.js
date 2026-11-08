@@ -230,6 +230,7 @@ function setViewMenu(open){const panel=$('.fb-view-panel'),trigger=$('[data-view
 $('[data-view-menu]')?.addEventListener('click',()=>setViewMenu($('.fb-view-panel').hidden));
 document.addEventListener('pointerdown',e=>{if(!$('.fb-view-panel')?.hidden&&!e.target?.closest?.('.fb-view-menu'))setViewMenu(false);});
 $('[data-tool=tape].fb-view-row')?.addEventListener('click',()=>setViewMenu(false));
+$$('[data-start-size]').forEach(b=>b.addEventListener('click',()=>{openCategory('modules');quickAdd(template('module',b.dataset.startSize));}));
 $$('[data-walk-act]').forEach(b=>{const act=b.dataset.walkAct;b.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation?.();if(act==='jump')engine?.walkJump?.();else if(act==='door')walkUseDoor();else engine?.walkKey?.('KeyC',!b.classList.contains('fb-active'));if(act==='crouch')b.classList.toggle('fb-active');});});
 document.addEventListener('pointerlockerror',()=>{if(walking)markLockBlocked();});
 document.addEventListener('pointerlockchange',()=>{if(walkLocked()){lockBlocked=false;root.classList.remove('fb-walk-free');}if(!walkLocked()){lockReleasedAt=Date.now();engine?.walkKey?.('*',false);if(walking&&document.hasFocus?.()!==false)exitWalk();}renderWalkPause();});
