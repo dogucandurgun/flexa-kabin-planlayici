@@ -1,0 +1,189 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FLEXA Kabin Planlayıcı</title><meta name="description" content="FLEXA modüler kabinlerinizi 3D olarak tasarlayın: modüller, kapılar, cepheler, iç mekân ve reklam alanları."><link rel="stylesheet" href="./building-style.css"><style>html,body{margin:0;background:#fff}#flexa-building-studio .fb-header{padding-left:20px}</style><script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script></head><body><div id="flexa-building-studio">
+<header class="fb-header">
+<div class="fb-identity"><strong>FLEXA</strong><span>Kabin planlayıcı</span></div>
+<div class="fb-project-actions">
+<details class="fb-project-settings"><summary class="fb-icon-button" aria-label="Tasarım ayarları" title="Tasarım ayarları"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/></svg></summary>
+<div class="fb-settings-menu">
+<div class="fb-section-label">Proje</div>
+<button data-action="import" class="fb-menu-item">Kayıtlı projeyi aç</button>
+<button data-action="new" class="fb-menu-item">Yeni tasarıma başla</button>
+<p class="fb-save-indicator" data-out="saved">Tasarım bu cihazda saklanır.</p>
+<p class="fb-footnote">Ön tasarımdır. Bağlantı, taşıyıcılık ve merdiven detayları uygulama projesinde doğrulanır.</p>
+</div></details>
+</div>
+</header>
+<div class="fb-main">
+
+<section class="fb-workspace" aria-label="Kabin çalışma alanı"><div class="fb-canvas-wrap"><div class="fb-scene" aria-label="Etkileşimli kabin sahnesi"></div>
+
+<div class="fb-selection-bar"><details class="fb-filter"><summary>Seçilebilen: <b data-out="pick-name">Tümü</b></summary><div class="fb-pick-filters" role="group" aria-label="Sahnede seçilecek öğe türü"><button data-pick="all" aria-pressed="true">Tümü</button><button data-pick="module">Modüller</button><button data-pick="wall">Duvarlar</button><button data-pick="door">Kapılar</button><button data-pick="ad">Reklam bantları</button><button data-pick="box">İç mekân</button><button data-pick="stairs">Merdivenler</button></div></details></div>
+
+<div class="fb-view-tools"><div class="fb-view-menu"><button type="button" class="fb-view-trigger" data-view-menu aria-expanded="false" aria-controls="fb-view-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg><span class="fb-view-label">Görünüm</span><i class="fb-view-badges" aria-hidden="true"><b data-badge="measure"></b><b data-badge="tape"></b><b data-badge="roof"></b></i><svg viewBox="0 0 24 24" aria-hidden="true" class="fb-view-chevron"><path d="M6 15l6-6 6 6"/></svg></button><div class="fb-view-panel" id="fb-view-panel" role="group" aria-label="Görünüm ve ölçüm" hidden><p class="fb-view-panel-title">Görünüm ve ölçüm</p><button type="button" class="fb-view-row" data-action="measure" title="Kısayol: M" aria-pressed="false"><span class="fb-row-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="1.6"/><path d="M4.5 5.5h15"/><path d="M7 3.3L4.5 5.5 7 7.7M17 3.3l2.5 2.2L17 7.7"/></svg></span><span class="fb-row-text"><strong>Ölçüleri göster</strong><small>Genişlik, derinlik, yükseklik ve uygulama alanı</small></span><i class="fb-row-switch" aria-hidden="true"></i></button><button type="button" class="fb-view-row" data-action="roof" title="Çatıları göster / gizle" aria-pressed="false"><span class="fb-row-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 11.5L12 4l9.5 7.5"/><path d="M5 10v9.5h14V10"/><path d="M9.5 19.5v-5h5v5"/></svg></span><span class="fb-row-text"><strong>Çatıları göster</strong><small>Modüllerin üstünü kapatıp dış görünümü incele</small></span><i class="fb-row-switch" aria-hidden="true"></i></button><hr class="fb-view-sep"><button type="button" class="fb-view-row fb-view-action" data-tool="tape" title="İki nokta arası mesafe"><span class="fb-row-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9.5" cy="11" r="6.5"/><circle cx="9.5" cy="11" r="2"/><path d="M9.5 17.5h11.5v-3.6h-5.3"/><path d="M21 12.6v6.4"/><path d="M17.6 17.5v-1.5"/></svg></span><span class="fb-row-text"><strong data-out="tape-row-title">Mesafe ölç</strong><small data-out="tape-row-hint">İki noktaya tıklayarak aradaki mesafeyi ölç</small></span><svg viewBox="0 0 24 24" aria-hidden="true" class="fb-row-chevron"><path d="M9 5l7 7-7 7"/></svg></button></div></div><div class="fb-history" role="group" aria-label="Geçmiş"><button data-action="undo" class="fb-icon-button" aria-label="Geri al" title="Geri al (⌘Z)" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 010 12h-3"/></svg></button><button data-action="redo" class="fb-icon-button" aria-label="Yinele" title="Yinele (⇧⌘Z)" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 14l5-5-5-5"/><path d="M20 9H10a6 6 0 000 12h3"/></svg></button></div><span class="fb-site-chip" data-out="site-area" title="Kabin ve merdivenin zeminde kapladığı dikdörtgen alan" hidden></span></div>
+
+<div class="fb-start-guide"><h1>Kabinini tasarlamaya başla</h1><p>Bir modül seç, kapılarını, duvarlarını ve içini adım adım belirle.</p><button data-action="start" class="fb-primary">Modül seç</button></div>
+
+<div class="fb-context-menu" role="menu" aria-label="Parça işlemleri" hidden><span data-out="context-name">Seçili parça</span><button type="button" role="menuitem" data-context-action="rotate">90° döndür <small>R</small></button><button type="button" role="menuitem" data-context-action="delete">Sil <small>Del</small></button></div>
+
+<button data-pegman class="fb-walk-button" title="Küçük adamı sahneye sürükle: oradan gez · Tıkla: içeriden başla" aria-label="İçeride gez"><svg viewBox="0 0 24 24" aria-hidden="true" class="fb-pegman-figure"><circle cx="12" cy="4.6" r="3"/><path d="M8.2 9.6c0-1 .8-1.8 1.8-1.8h4c1 0 1.8.8 1.8 1.8v5.2a1.2 1.2 0 01-1.2 1.2h-.5V21a1.2 1.2 0 01-1.2 1.2h-1.8A1.2 1.2 0 019.9 21v-5h-.5a1.2 1.2 0 01-1.2-1.2z"/></svg><span>İçeride gez</span></button>
+<div class="fb-pegman-ghost" hidden><svg viewBox="0 0 24 24" aria-hidden="true" class="fb-pegman-figure"><circle cx="12" cy="4.6" r="3"/><path d="M8.2 9.6c0-1 .8-1.8 1.8-1.8h4c1 0 1.8.8 1.8 1.8v5.2a1.2 1.2 0 01-1.2 1.2h-.5V21a1.2 1.2 0 01-1.2 1.2h-1.8A1.2 1.2 0 019.9 21v-5h-.5a1.2 1.2 0 01-1.2-1.2z"/></svg></div>
+
+<div class="fb-walk-hud" aria-live="polite"><div class="fb-walk-vignette"></div><button data-action="walk-exit" class="fb-walk-exit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Gezintiden çık</button><div class="fb-walk-levels" data-out="walk-levels" hidden></div><i class="fb-walk-dot" aria-hidden="true"></i><p class="fb-walk-hint"><span class="fb-hint-desk"><b>Fare</b> bak · <b>Basılı tut</b> / <b>W</b> yürü · <b>Space</b> zıpla · <b>C</b> eğil · <b>E</b> kapı · <b>Esc</b> çık</span><span class="fb-hint-touch"><b>Sürükle</b> bak · <b>Basılı tut</b> yürü</span><span class="fb-hint-free"><b>Fareyi oynat</b> bak · <b>Basılı tut</b> / <b>W</b> yürü · <b>Space</b> zıpla · <b>C</b> eğil · <b>E</b> kapı · <b>Esc</b> çık</span></p><div class="fb-walk-prompt" hidden><kbd>E</kbd><span data-out="walk-prompt">Kapıyı aç</span></div><div class="fb-walk-actions"><button type="button" data-walk-act="door">Kapı</button><button type="button" data-walk-act="jump">Zıpla</button><button type="button" data-walk-act="crouch">Eğil</button></div><div class="fb-walk-paused" hidden><strong>Duraklatıldı</strong><span>Devam etmek için tıkla · Çıkmak için Esc</span></div></div>
+
+<div class="fb-tape-bar" hidden><span data-out="tape-status"></span><button data-action="tape-clear" hidden>Temizle</button></div>
+
+<div class="fb-drag-hint" hidden><span data-out="drag-status">Yerleştirmek için bırakın</span></div>
+
+<div class="fb-message" role="status" aria-live="polite"></div>
+
+<div class="fb-bottom-tools"><div class="fb-tool-switch" role="group" aria-label="Sahne aracı">
+<button data-tool="select" class="fb-active" aria-pressed="true" title="Seç"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3l12 9-5.5 1.2L15 19l-2.4 1.1-2.6-5.7L6 18z"/></svg><span>Seç</span></button>
+<button data-tool="move" aria-pressed="false" title="Taşı"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg><span>Taşı</span></button>
+<button data-tool="wall" aria-pressed="false" title="Duvar seç"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 10h16M4 15h16M10 4v6M14 10v5M9 15v5"/></svg><span>Duvar</span></button><i class="fb-tool-divider" aria-hidden="true"></i>
+<button data-quick="rotate" title="Seçili parçayı 90° döndür (R)" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 11-2.3-5.6"/><path d="M20 4v5h-5"/></svg><span>Döndür</span></button>
+</div></div>
+<p class="fb-sr" data-out="gesture">Sol sürükle: çevir · Sağ sürükle: kaydır · Tekerlek: yakınlaş</p>
+
+<div class="fb-sr"><span data-out="engine">3D sahne hazırlanıyor</span><span data-out="pick-help"></span><span data-out="selection"></span><span><b data-out="connections">0</b> m ortak yüzey açık</span></div>
+</div>
+</section>
+
+<div class="fb-sidebar">
+<div class="fb-sidebar-tabs" role="group" aria-label="Planlayıcı paneli"><button data-sidebar="add" aria-pressed="true">Ekle</button><button data-sidebar="edit" aria-pressed="false">Düzenle <span data-out="edit-count"></span></button></div>
+
+<aside class="fb-library">
+<div class="fb-category-menu">
+<h2 class="fb-panel-title">Adım adım tasarla</h2>
+<nav aria-label="Tasarım adımları"><ol class="fb-steps">
+<li><button data-category="modules"><i class="fb-step-number">1</i><span><strong>Modüller</strong><small>235, 482 veya 616 cm</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></li>
+<li><button data-category="doors"><i class="fb-step-number">2</i><span><strong>Giriş kapıları</strong><small>Tek veya çift kanat</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></li>
+<li><button data-category="materials"><i class="fb-step-number">3</i><span><strong>Duvarlar</strong><small>Cam, panel, folyo, lightbox</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></li>
+<li><button data-category="interior"><i class="fb-step-number">4</i><span><strong>İç mekân</strong><small>Tezgâh, masa, raf, oturma</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></li>
+<li><button data-category="stairs"><i class="fb-step-number">5</i><span><strong>Merdiven</strong><small>Üst kata çıkış</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></li>
+<li><button data-category="ads"><i class="fb-step-number">6</i><span><strong>Reklam bantları</strong><small>Üst ve alt çerçeve</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></li>
+</ol></nav>
+<button data-category="objects" class="fb-objects-link"><span><strong>Tasarımımdaki parçalar</strong><small><b data-out="objects-total">0</b> parça</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
+
+<div class="fb-category-content">
+<button data-action="categories" class="fb-category-back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Tüm adımlar</button>
+<p class="fb-step-eyebrow" data-out="step-label"></p>
+<h2 class="fb-panel-title" data-out="category-title">Modüller</h2>
+<p class="fb-help" data-out="category-help">Tıklayarak ekle veya sahneye sürükle.</p>
+
+<section data-category-panel="modules" hidden><div class="fb-product-grid">
+<button class="fb-piece" data-kind="module" data-size="235"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><rect x="31" y="10" width="34" height="38" rx="1"/><path d="M31 15h34M31 44h34M48 15v29"/></svg></span><strong>FLEXA 235</strong><small>235 × 235 × 255 cm</small></button>
+<button class="fb-piece" data-kind="module" data-size="482"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><rect x="13" y="10" width="70" height="38" rx="1"/><path d="M13 15h70M13 44h70M30.5 15v29M48 15v29M65.5 15v29"/></svg></span><strong>FLEXA 482</strong><small>482 × 235 × 255 cm</small></button>
+<button class="fb-piece" data-kind="module" data-size="616"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><rect x="4" y="10" width="88" height="38" rx="1"/><path d="M4 15h88M4 44h88M21.6 15v29M39.2 15v29M56.8 15v29M74.4 15v29"/></svg></span><strong>FLEXA 616</strong><small>616 × 235 × 255 cm</small></button>
+</div></section>
+
+<section data-category-panel="doors" hidden><div class="fb-product-grid">
+<button class="fb-piece" data-kind="door" data-door-type="single"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><rect x="36" y="6" width="24" height="44" rx="1"/><path d="M54 28v4"/></svg></span><strong>Tek kanatlı</strong><small>90 cm genişlik</small></button>
+<button class="fb-piece" data-kind="door" data-door-type="double"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><rect x="28" y="6" width="40" height="44" rx="1"/><path d="M48 6v44M44 28v4M52 28v4"/></svg></span><strong>Çift kanatlı</strong><small>150 cm genişlik</small></button>
+</div></section>
+
+<section data-category-panel="interior" hidden><div class="fb-product-grid fb-interior-catalogue">
+<button class="fb-piece" data-kind="box" data-unit="counter"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><path d="M26 20h44v28H26zM24 20h48"/><path d="M26 27h44"/></svg></span><strong>Servis tezgâhı</strong><small>85 × 60 × 90 cm</small></button>
+<button class="fb-piece" data-kind="box" data-unit="table"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><path d="M24 24h48M30 24v24M66 24v24"/></svg></span><strong>Kafe masası</strong><small>100 × 70 × 75 cm</small></button>
+<button class="fb-piece" data-kind="box" data-unit="chair"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><path d="M40 8v40M40 30h18v18M40 30v0"/></svg></span><strong>Sandalye</strong><small>50 × 55 × 85 cm</small></button>
+<button class="fb-piece" data-kind="box" data-unit="stool"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><path d="M38 16h20M42 16l-4 32M54 16l4 32M40 36h16"/></svg></span><strong>Bar taburesi</strong><small>40 × 40 × 80 cm</small></button>
+<button class="fb-piece" data-kind="box" data-unit="shelf"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><rect x="32" y="4" width="32" height="46" rx="1"/><path d="M32 15h32M32 27h32M32 39h32"/></svg></span><strong>Ürün rafı</strong><small>100 × 35 × 190 cm</small></button>
+<button class="fb-piece" data-kind="box" data-unit="sofa"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><path d="M24 22h48v14H24zM20 26h4v18h48V26h4v18H20z"/></svg></span><strong>İkili oturma</strong><small>140 × 70 × 82 cm</small></button>
+<button class="fb-piece" data-kind="box" data-unit="display"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><rect x="34" y="16" width="28" height="32" rx="1"/><path d="M34 26h28"/></svg></span><strong>Sergileme bankosu</strong><small>90 × 45 × 110 cm</small></button>
+<button class="fb-piece" data-kind="box" data-unit="planter"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><path d="M40 34h16l-2 14H42zM48 34V18M48 24c-6 0-9-4-9-10 6 0 9 4 9 10zM48 22c5 0 8-4 8-9-5 0-8 4-8 9z"/></svg></span><strong>Bitkilik</strong><small>40 × 40 × 95 cm</small></button>
+</div></section>
+
+<section data-category-panel="stairs" hidden><div class="fb-product-grid">
+<button class="fb-piece" data-kind="stairs"><span class="fb-piece-art"><svg viewBox="0 0 96 56" aria-hidden="true"><path d="M24 48h10v-8h8v-8h8v-8h8v-8h14"/><path d="M24 48L72 12"/></svg></span><strong>Dış merdiven</strong><small>Bir kat · sahanlıklı</small></button>
+</div></section>
+
+<section data-category-panel="ads" hidden><div class="fb-ad-modes" role="group" aria-label="Reklam bandı">
+<button type="button" data-ad-mode="add" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Ekle</button>
+<button type="button" data-ad-mode="remove" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>Sil</button>
+</div><p class="fb-ad-mode-hint" data-out="ad-mode-hint"></p></section>
+
+<section data-category-panel="materials" hidden><div class="fb-material-grid">
+<button data-material="glass" class="fb-material"><i class="fb-swatch fb-swatch-glass"></i><span>Şeffaf cam</span></button>
+<button data-material="frosted" class="fb-material"><i class="fb-swatch fb-swatch-frosted"></i><span>Buzlu cam</span></button>
+<button data-material="solid" class="fb-material"><i class="fb-swatch fb-swatch-solid"></i><span>Düz panel</span></button>
+<button data-material="vinyl" class="fb-material"><i class="fb-swatch fb-swatch-vinyl"></i><span>Folyo baskı</span></button>
+<button data-material="lightbox" class="fb-material"><i class="fb-swatch fb-swatch-lightbox"></i><span>Lightbox</span></button>
+<button data-material="railing" class="fb-material"><i class="fb-swatch fb-swatch-railing"></i><span>Korkuluk</span></button>
+<button data-material="none" class="fb-material"><i class="fb-swatch fb-swatch-none"></i><span>Açık yüzey</span></button>
+</div></section>
+
+<section data-category-panel="objects" hidden><div class="fb-object-list" aria-label="Sahnedeki parçalar"></div></section>
+<div class="fb-step-nav"><button data-step="prev" class="fb-step-prev">Önceki</button><button data-step="next" class="fb-step-next"><span data-out="next-step">Sonraki adım</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+</div>
+</aside>
+
+<aside class="fb-inspector">
+<label class="fb-field fb-part-picker">Düzenlenen parça<select id="fb-selection" aria-label="Düzenlenecek parçayı seçin"></select></label>
+<div class="fb-empty-selection" hidden>Düzenlemek için sahnede bir parçaya tıklayın.</div>
+<div class="fb-object-fields">
+<div class="fb-property-heading"><span data-out="selected-kind">MODÜL</span><strong data-out="selected-name">FLEXA 482</strong></div>
+<div class="fb-transform-fields">
+<div class="fb-selection-actions"><button data-action="rotate">Döndür</button><button data-action="duplicate" title="Kopyala (⌘C ⌘V · ⌘D)">Kopyala</button></div>
+<label class="fb-field fb-module-only">Modül boyu<select id="fb-size"><option value="235">235 cm</option><option value="482">482 cm</option><option value="616">616 cm</option></select></label>
+<div class="fb-xy"><label class="fb-field">X konumu (cm)<input type="number" id="fb-x" step="5"></label><label class="fb-field">Z konumu (cm)<input type="number" id="fb-z" step="5"></label></div>
+<p class="fb-floor-line">Kat: <output id="fb-item-floor">Zemin</output></p>
+<div class="fb-module-actions fb-module-only"><button data-action="stack" class="fb-stack">Üzerine kat ekle</button><button data-action="inside" class="fb-inside">İçeride gez</button></div>
+</div>
+
+<section class="fb-wall-editor fb-module-only"><h3 class="fb-section-label">Duvarlar</h3>
+<label class="fb-field">Yüzey<select id="fb-wall-face"><option value="front">Ön duvar</option><option value="back">Arka duvar</option><option value="left">Sol duvar</option><option value="right">Sağ duvar</option></select></label>
+<div class="fb-wall-types" role="group" aria-label="Duvar kaplaması">
+<button data-wall-type="glass"><i class="fb-swatch fb-swatch-glass"></i>Cam</button><button data-wall-type="frosted"><i class="fb-swatch fb-swatch-frosted"></i>Buzlu cam</button><button data-wall-type="solid"><i class="fb-swatch fb-swatch-solid"></i>Panel</button><button data-wall-type="vinyl"><i class="fb-swatch fb-swatch-vinyl"></i>Folyo</button><button data-wall-type="lightbox"><i class="fb-swatch fb-swatch-lightbox"></i>Lightbox</button><button data-wall-type="railing"><i class="fb-swatch fb-swatch-railing"></i>Korkuluk</button><button data-wall-type="none"><i class="fb-swatch fb-swatch-none"></i>Açık</button>
+</div>
+<div class="fb-wall-custom" hidden><label class="fb-field fb-color-inline">Panel rengi<input type="color" id="fb-wall-color" value="#8d9877"></label></div>
+<div class="fb-print-spec fb-wall-image" hidden><h4 class="fb-section-label">Baskı görseli</h4><dl><div><dt>Baskı alanı</dt><dd data-out="wall-print-size">—</dd></div><div><dt>Önerilen</dt><dd data-out="wall-ideal-px">—</dd></div></dl><label class="fb-upload"><input type="file" id="fb-wall-image" accept="image/png,image/jpeg,image/webp"><span>Görsel yükle</span><small>PNG, JPG veya WebP · en fazla 25 MB</small></label><p class="fb-image-status" data-out="wall-image-status" hidden></p><button data-action="wall-image-remove" class="fb-link-button" hidden>Görseli kaldır</button></div>
+<p class="fb-note" data-out="wall-note">Yalnızca seçili duvar değişir.</p>
+<button data-action="wall-all" class="fb-link-button">Tüm duvarlara uygula</button>
+</section>
+
+<section class="fb-floor-editor fb-module-only"><h3 class="fb-section-label">Zemin</h3>
+<div class="fb-wall-types fb-floor-types" role="group" aria-label="Zemin kaplaması"><button data-floor-type="standard" aria-pressed="false" title="Standart zemin"><i class="fb-swatch fb-floor-standard"></i>Standart</button><button data-floor-type="oak" aria-pressed="false" title="Meşe görünümlü SPC parke"><i class="fb-swatch fb-floor-oak"></i>Meşe</button><button data-floor-type="walnut" aria-pressed="false" title="Ceviz görünümlü SPC parke"><i class="fb-swatch fb-floor-walnut"></i>Ceviz</button><button data-floor-type="concrete" aria-pressed="false" title="Beton görünümlü vinil"><i class="fb-swatch fb-floor-concrete"></i>Beton</button><button data-floor-type="terrazzo" aria-pressed="false" title="Terrazzo görünümlü vinil"><i class="fb-swatch fb-floor-terrazzo"></i>Terrazzo</button><button data-floor-type="carpet" aria-pressed="false" title="Fuar halısı (antrasit)"><i class="fb-swatch fb-floor-carpet"></i>Halı</button><button data-floor-type="rubber" aria-pressed="false" title="Kauçuk (siyah)"><i class="fb-swatch fb-floor-rubber"></i>Kauçuk</button><button data-floor-type="deck" aria-pressed="false" title="Kompozit deck (WPC)"><i class="fb-swatch fb-floor-deck"></i>Deck</button></div>
+<button data-action="floor-all" class="fb-link-button">Tüm modüllere uygula</button>
+</section>
+
+<p class="fb-note fb-stair-status" data-out="stair-entry" hidden></p>
+
+<section class="fb-door-editor" hidden><h3 class="fb-section-label">Giriş kapısı</h3>
+<label class="fb-field">Kapı tipi<select id="fb-door-type"><option value="single">Tek kanat · 90 cm</option><option value="double">Çift kanat · 150 cm</option></select></label>
+<div class="fb-field-row"><label class="fb-field">Duvar<select id="fb-door-face"><option value="front">Ön</option><option value="back">Arka</option><option value="left">Sol</option><option value="right">Sağ</option></select></label><label class="fb-field">Kulp<select id="fb-door-hinge"><option value="right">Sağda</option><option value="left">Solda</option></select></label></div>
+<label class="fb-field">Merkezden uzaklık (cm)<input type="number" id="fb-door-offset" step="5" value="0"></label>
+<p class="fb-note">Taşı aracıyla kapıyı duvar boyunca kaydırabilirsiniz.</p>
+</section>
+
+<section class="fb-interior-editor" hidden><h3 class="fb-section-label">İç mekân ünitesi</h3>
+<label class="fb-field">Ünite<select id="fb-unit-type"><option value="counter">Servis tezgâhı</option><option value="table">Kafe masası</option><option value="chair">Sandalye</option><option value="stool">Bar taburesi</option><option value="shelf">Ürün rafı</option><option value="sofa">İkili oturma</option><option value="display">Sergileme bankosu</option><option value="planter">Bitkilik</option></select></label>
+<label class="fb-field fb-color-field fb-color-wide">Renk<input type="color" id="fb-unit-color" value="#829174"></label>
+<p class="fb-note" data-out="unit-size"></p>
+</section>
+
+<section class="fb-ad-editor" hidden><h3 class="fb-section-label">Reklam bandı</h3>
+<p class="fb-floor-line" data-out="ad-where"></p>
+<div class="fb-field">Panel rengi<div class="fb-swatch-row" role="group" aria-label="Panel rengi"><button type="button" class="fb-color-swatch" data-ad-color="#e9b53b" style="--swatch:#e9b53b" title="Sarı" aria-pressed="false"></button><button type="button" class="fb-color-swatch" data-ad-color="#e0662f" style="--swatch:#e0662f" title="Turuncu" aria-pressed="false"></button><button type="button" class="fb-color-swatch" data-ad-color="#c8372d" style="--swatch:#c8372d" title="Kırmızı" aria-pressed="false"></button><button type="button" class="fb-color-swatch" data-ad-color="#2f6b4f" style="--swatch:#2f6b4f" title="Yeşil" aria-pressed="false"></button><button type="button" class="fb-color-swatch" data-ad-color="#1f3a5f" style="--swatch:#1f3a5f" title="Lacivert" aria-pressed="false"></button><button type="button" class="fb-color-swatch" data-ad-color="#141414" style="--swatch:#141414" title="Siyah" aria-pressed="false"></button><button type="button" class="fb-color-swatch" data-ad-color="#f5f5f2" style="--swatch:#f5f5f2" title="Beyaz" aria-pressed="false"></button><label class="fb-color-swatch fb-color-custom" title="Özel renk"><input type="color" id="fb-ad-color" value="#d49b45" aria-label="Özel panel rengi"></label></div></div>
+<label class="fb-switch"><input type="checkbox" id="fb-ad-seamless" checked><span>Bitişik bantlarla birleştir</span></label>
+<label class="fb-switch"><input type="checkbox" id="fb-ad-lightbox"><span>Işıklı bant</span></label>
+<p class="fb-note" data-out="ad-merge">Bitişik bantlar tek yüzey olur.</p>
+<div class="fb-print-spec">
+<h4 class="fb-section-label">Reklam görseli</h4>
+<dl class="fb-print-table">
+<div><dt>Baskı alanı</dt><dd data-out="ad-print-size">—</dd></div>
+<div><dt>Önerilen</dt><dd data-out="ad-ideal-px">—</dd></div>
+</dl>
+<label class="fb-upload"><input type="file" id="fb-ad-image" accept="image/png,image/jpeg,image/webp"><span>Görsel yükle</span><small>PNG, JPG veya WebP · en fazla 25 MB</small></label>
+<p class="fb-image-status" data-out="ad-image-status" hidden></p>
+<button data-action="ad-image-remove" class="fb-link-button" hidden>Görseli kaldır</button>
+</div>
+</section>
+</div>
+<button data-action="delete" class="fb-delete">Parçayı sil</button>
+</aside>
+
+<footer class="fb-summary"><div class="fb-stats"><span><b data-out="count">0</b> modül</span><span><b data-out="area">0</b> m²</span><span><b data-out="floors">0</b> kat</span></div><button data-action="export" class="fb-primary fb-save">Tasarımı kaydet</button></footer>
+<input type="file" id="fb-import-file" accept="application/json,.json" hidden>
+</div>
+</div>
+</div>
+<script type="module" src="./building-app.js"></script></body></html>
